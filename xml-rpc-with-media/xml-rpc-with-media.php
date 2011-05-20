@@ -143,6 +143,11 @@ function xrwm_post_with_media($args){
 		// Insert new post
 		$new_post_id = wp_insert_post($new_post);
 		
+		//custom fields
+		foreach ($custom_fields as $meta_key => $meta_value) {
+			add_post_meta($new_post_id, $meta_key, $meta_value);
+		}
+		
 		//images
 		foreach ($medias as $media) {
 			
@@ -161,12 +166,7 @@ function xrwm_post_with_media($args){
 			$attach_data = wp_generate_attachment_metadata( $attach_id, $download_file );
 			wp_update_attachment_metadata( $attach_id, $attach_data );
 		}
-				
 		
-		//custom fields
-		foreach ($custom_fields as $meta_key => $meta_value) {
-			add_post_meta($new_post_id, $meta_key, $meta_value);
-		}
 				
 		return TRUE;
 }
