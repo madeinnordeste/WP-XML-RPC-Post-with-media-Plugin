@@ -23,3 +23,6 @@ Example to use:
 	}else{
 	    echo "Article Posted Successfully";
 	}
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/madeinnordeste/wp-xml-rpc-post-with-media-plugin/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
